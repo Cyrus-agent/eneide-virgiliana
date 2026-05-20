@@ -4,9 +4,9 @@
 
 @theme {
   /* Fonts */
-  --font-display: var(--font-cinzel), "Times New Roman", serif;
-  --font-body:    var(--font-garamond), Georgia, serif;
-  --font-ui:      var(--font-josefin), Arial, sans-serif;
+  --font-display: "Cinzel", "Times New Roman", serif;
+  --font-body:    "EB Garamond", Georgia, serif;
+  --font-ui:      "Josefin Sans", Arial, sans-serif;
 
   /* Color palette */
   --color-obsidian:      #0D0907;

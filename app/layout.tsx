@@ -1,25 +1,5 @@
 import type { Metadata } from "next";
-import { Cinzel, EB_Garamond, Josefin_Sans } from "next/font/google";
 import "./globals.css";
-
-const cinzel = Cinzel({
-  variable: "--font-cinzel",
-  subsets: ["latin"],
-  weight: ["400", "600", "700", "900"],
-});
-
-const ebGaramond = EB_Garamond({
-  variable: "--font-garamond",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
-});
-
-const josefinSans = Josefin_Sans({
-  variable: "--font-josefin",
-  subsets: ["latin"],
-  weight: ["300", "400", "600"],
-});
 
 export const metadata: Metadata = {
   title: "L'Eneide di Virgilio — Storicizzazione e Ideologia Augustea",
@@ -42,10 +22,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="it"
-      className={`${cinzel.variable} ${ebGaramond.variable} ${josefinSans.variable}`}
-    >
+    <html lang="it">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Josefin+Sans:wght@300;400;600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="antialiased">{children}</body>
     </html>
   );
