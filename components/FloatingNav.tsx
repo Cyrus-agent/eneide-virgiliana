@@ -7,28 +7,28 @@ import { navLinks } from "@/lib/content";
 // Map each section id to the scroll.offset at which it becomes the active section
 // Must match CameraRig phase ranges and JourneyContent top positions
 const SECTION_RANGES: Record<string, [number, number]> = {
-  hero:       [0.00, 0.30],
-  contesto:   [0.30, 0.41],
-  "libro-i":  [0.41, 0.53],
-  "libro-ii": [0.53, 0.64],
-  "libro-iii":[0.64, 0.75],
-  "libro-iv": [0.75, 0.85],
-  dibattito:  [0.85, 0.92],
-  augusto:    [0.92, 0.97],
-  biblio:     [0.97, 1.00],
+  hero:        [0.00, 0.36],
+  contesto:    [0.36, 0.47],
+  "libro-i":   [0.45, 0.57],
+  "libro-ii":  [0.54, 0.66],
+  "libro-iii": [0.63, 0.72],
+  "libro-iv":  [0.71, 0.80],
+  dibattito:   [0.80, 0.88],
+  augusto:     [0.87, 0.94],
+  biblio:      [0.93, 1.00],
 };
 
 // Scroll target offset (0-1) when a nav item is clicked
 const SECTION_TARGETS: Record<string, number> = {
   hero:        0.00,
-  contesto:    0.31,
-  "libro-i":   0.42,
-  "libro-ii":  0.54,
-  "libro-iii": 0.65,
-  "libro-iv":  0.76,
-  dibattito:   0.86,
-  augusto:     0.92,
-  biblio:      0.97,
+  contesto:    0.40,
+  "libro-i":   0.49,
+  "libro-ii":  0.58,
+  "libro-iii": 0.665,
+  "libro-iv":  0.75,
+  dibattito:   0.835,
+  augusto:     0.90,
+  biblio:      0.96,
 };
 
 export default function FloatingNav() {
@@ -40,8 +40,8 @@ export default function FloatingNav() {
     const handler = (e: Event) => {
       const t = (e as CustomEvent<{ progress: number }>).detail.progress;
 
-      // Show nav after aerial phase
-      setVisible(t > 0.10);
+      // Show nav after approach phase
+      setVisible(t > 0.32);
 
       // Determine active section
       for (const [id, [from, to]] of Object.entries(SECTION_RANGES)) {

@@ -23,7 +23,7 @@ export default function JourneyCanvas() {
       }}
     >
       <Canvas
-        camera={{ position: [0, 55, 2], fov: 52, near: 0.1, far: 400 }}
+        camera={{ position: [0, 28, 42], fov: 52, near: 0.1, far: 400 }}
         shadows
         gl={{ antialias: true, alpha: false }}
         style={{ background: "#0D0A19" }}

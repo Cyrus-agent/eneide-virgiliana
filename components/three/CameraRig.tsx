@@ -22,8 +22,8 @@ const ORBIT_RADIUS = 4.8;
 export default function CameraRig() {
   const { camera } = useThree();
   const scroll = useScroll();
-  const targetPos = useRef(new THREE.Vector3(0, 55, 2));
-  const targetLook = useRef(new THREE.Vector3(0, 0, -8));
+  const targetPos = useRef(new THREE.Vector3(0, 28, 42));
+  const targetLook = useRef(new THREE.Vector3(0, 6, -5));
   const lastT = useRef(-1);
 
   useFrame(() => {
@@ -38,25 +38,27 @@ export default function CameraRig() {
     let tx: number, ty: number, tz: number;
     let lx: number, ly: number, lz: number;
 
-    if (t < 0.12) {
-      // ── PHASE 1: Aerial top-down view, slowly descend ──
-      const p = easeInOut(t / 0.12);
+    if (t < 0.22) {
+      // ── PHASE 1: Isometric frontal approach — temple clearly visible ──
+      const p = easeInOut(t / 0.22);
       tx = 0;
-      ty = THREE.MathUtils.lerp(55, 28, p);
-      tz = THREE.MathUtils.lerp(2, 8, p);
-      lx = 0; ly = 0; lz = -8;
-    } else if (t < 0.28) {
-      // ── PHASE 2: Descend toward hero column top ──
-      const p = easeInOut((t - 0.12) / 0.16);
+      ty = THREE.MathUtils.lerp(28, 18, p);
+      tz = THREE.MathUtils.lerp(42, 20, p);
+      lx = 0;
+      ly = THREE.MathUtils.lerp(6, 8, p);
+      lz = THREE.MathUtils.lerp(-5, -3, p);
+    } else if (t < 0.35) {
+      // ── PHASE 2: Sweep to hero column top ──
+      const p = easeInOut((t - 0.22) / 0.13);
       tx = 0;
-      ty = THREE.MathUtils.lerp(28, HERO_COL_HEIGHT + 2.5, p);
-      tz = THREE.MathUtils.lerp(8, ORBIT_RADIUS, p);
+      ty = THREE.MathUtils.lerp(18, HERO_COL_HEIGHT + 2, p);
+      tz = THREE.MathUtils.lerp(20, ORBIT_RADIUS, p);
       lx = 0;
       ly = THREE.MathUtils.lerp(8, HERO_COL_HEIGHT + 0.5, p);
-      lz = 0;
+      lz = THREE.MathUtils.lerp(-3, 0, p);
     } else {
       // ── PHASE 3: Orbit 360° around column while descending ──
-      const p = (t - 0.28) / 0.72; // 0 → 1 across remaining scroll
+      const p = (t - 0.35) / 0.65; // 0 → 1 across remaining scroll
       const angle = p * Math.PI * 2; // full circle
       const height = THREE.MathUtils.lerp(HERO_COL_HEIGHT + 1.5, 0.6, p);
 

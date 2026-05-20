@@ -405,8 +405,8 @@ export default function JourneyContent() {
         </motion.div>
       </motion.div>
 
-      {/* ── CONTESTO STORICO ─────────────────── top 290vh → t≈0.29 ── */}
-      <Pane progress={progress} topVh={290} side="left" accent="#C9A84C" id="contesto" shouldReduce={shouldReduce}>
+      {/* ── CONTESTO STORICO ─────────────────── top 400vh → t≈0.40 ── */}
+      <Pane progress={progress} topVh={400} side="left" accent="#C9A84C" id="contesto" shouldReduce={shouldReduce}>
         <SectionLabel label="Contesto storico · 29–19 a.C." accent="#C9A84C" />
         <H2 color="#F5EDD8">La storicizzazione virgiliana</H2>
         <GoldRule accent="#C9A84C" />
@@ -420,8 +420,8 @@ export default function JourneyContent() {
         ))}
       </Pane>
 
-      {/* ── LIBRO I ──────────────────────────── top 435vh → t≈0.435 ── */}
-      <Pane progress={progress} topVh={435} side="right" accent={b1.accent} id="libro-i" shouldReduce={shouldReduce}>
+      {/* ── LIBRO I ──────────────────────────── top 490vh → t≈0.49 ── */}
+      <Pane progress={progress} topVh={490} side="right" accent={b1.accent} id="libro-i" shouldReduce={shouldReduce}>
         <SceneImage src="/images/book1-juno-temple.jpg" alt="Tempio di Giunone a Cartagine · Aen. I 441" accent={b1.accent} />
         <SectionLabel label={b1.title} accent={b1.accent} />
         <H2 color="#F5EDD8">{b1.subtitle}</H2>
@@ -436,8 +436,8 @@ export default function JourneyContent() {
         {quotesI.map((q) => <LatinQuote key={q.source} {...q} accent={b1.accent} />)}
       </Pane>
 
-      {/* ── LIBRO II ─────────────────────────── top 570vh → t≈0.57 ── */}
-      <Pane progress={progress} topVh={570} side="left" accent={b2.accent} id="libro-ii" shouldReduce={shouldReduce}>
+      {/* ── LIBRO II ─────────────────────────── top 580vh → t≈0.58 ── */}
+      <Pane progress={progress} topVh={580} side="left" accent={b2.accent} id="libro-ii" shouldReduce={shouldReduce}>
         <SceneImage src="/images/book2-fall-of-troy.jpg" alt="Caduta di Troia in fiamme · Aen. II" accent={b2.accent} />
         <SectionLabel label={b2.title} accent={b2.accent} />
         <H2 color="#F5EDD8">{b2.subtitle}</H2>
@@ -454,8 +454,8 @@ export default function JourneyContent() {
         <Finding {...keyFindings[2]} accent={b2.accent} textColor={b2.textColor} />
       </Pane>
 
-      {/* ── LIBRO III ────────────────────────── top 700vh → t≈0.70 ── */}
-      <Pane progress={progress} topVh={700} side="right" accent={b3.accent} id="libro-iii" shouldReduce={shouldReduce}>
+      {/* ── LIBRO III ────────────────────────── top 665vh → t≈0.665 ── */}
+      <Pane progress={progress} topVh={665} side="right" accent={b3.accent} id="libro-iii" shouldReduce={shouldReduce}>
         <SceneImage src="/images/book3-fleet-mediterranean.jpg" alt="Flotta troiana nel Mediterraneo · Aen. III" accent={b3.accent} />
         <SectionLabel label={b3.title} accent={b3.accent} />
         <H2 color="#F5EDD8">{b3.subtitle}</H2>
@@ -471,8 +471,8 @@ export default function JourneyContent() {
         <Finding {...keyFindings[3]} accent={b3.accent} textColor={b3.textColor} />
       </Pane>
 
-      {/* ── LIBRO IV ─────────────────────────── top 815vh → t≈0.815 ── */}
-      <Pane progress={progress} topVh={815} side="left" accent={b4.accent} id="libro-iv" shouldReduce={shouldReduce}>
+      {/* ── LIBRO IV ─────────────────────────── top 750vh → t≈0.75 ── */}
+      <Pane progress={progress} topVh={750} side="left" accent={b4.accent} id="libro-iv" shouldReduce={shouldReduce}>
         <SceneImage src="/images/book4-dido-pyre.jpg" alt="Didone sul rogo · Aen. IV" accent={b4.accent} />
         <SectionLabel label={b4.title} accent={b4.accent} />
         <H2 color="#F5EDD8">{b4.subtitle}</H2>
@@ -491,8 +491,8 @@ export default function JourneyContent() {
         ))}
       </Pane>
 
-      {/* ── DIBATTITO ────────────────────────── top 930vh → t≈0.93 ── */}
-      <Pane progress={progress} topVh={930} side="right" accent="#C9A84C" id="dibattito" shouldReduce={shouldReduce}>
+      {/* ── DIBATTITO ────────────────────────── top 835vh → t≈0.835 ── */}
+      <Pane progress={progress} topVh={835} side="right" accent="#C9A84C" id="dibattito" shouldReduce={shouldReduce}>
         <SectionLabel label="Il dibattito critico" accent="#C9A84C" />
         <H2 color="#F5EDD8">Harvard School vs Scuola Italiana</H2>
         <GoldRule accent="#C9A84C" />
@@ -530,9 +530,8 @@ export default function JourneyContent() {
         ))}
       </Pane>
 
-      {/* ── PROGRAMMA AUGUSTEO ──────────────── top 1015vh → t≈1.015 ── */}
-      {/* Note: clamped near end of journey — base of column */}
-      <Pane progress={progress} topVh={1015} side="left" accent="#C9A84C" id="augusto" shouldReduce={shouldReduce}>
+      {/* ── PROGRAMMA AUGUSTEO ──────────────── top 900vh → t≈0.90 ── */}
+      <Pane progress={progress} topVh={900} side="left" accent="#C9A84C" id="augusto" shouldReduce={shouldReduce}>
         <SceneImage src="/images/augustan-forum.jpg" alt="Forum Augustum — Tempio di Marte Ultore" accent="#C9A84C" />
         <SectionLabel label="Il programma culturale augusteo" accent="#C9A84C" />
         <H2 color="#F5EDD8">Marmo e mito: l&apos;Eneide in pietra</H2>
@@ -551,8 +550,8 @@ export default function JourneyContent() {
         ))}
       </Pane>
 
-      {/* ── BIBLIOGRAFIA ─────────────────────── top 1070vh → t≈1.07 ── */}
-      <Pane progress={progress} topVh={1070} side="right" accent="#6B5A2A" id="biblio" shouldReduce={shouldReduce}>
+      {/* ── BIBLIOGRAFIA ─────────────────────── top 960vh → t≈0.96 ── */}
+      <Pane progress={progress} topVh={960} side="right" accent="#6B5A2A" id="biblio" shouldReduce={shouldReduce}>
         <SectionLabel label="Bibliografia essenziale" accent="#C9A84C" />
         <H2 color="#F5EDD8">Fonti e strumenti critici</H2>
         <GoldRule accent="#6B5A2A" />
